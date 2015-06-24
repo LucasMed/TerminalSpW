@@ -6,15 +6,26 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>669</width>
+    <width>672</width>
     <height>515</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="font">
+   <font>
+    <family>Times New Roman</family>
+   </font>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>9</x>
@@ -65,7 +76,7 @@
      <item>
       <widget class="QTabWidget" name="tabWidget">
        <property name="currentIndex">
-        <number>1</number>
+        <number>0</number>
        </property>
        <widget class="QWidget" name="Serial">
         <attribute name="title">
@@ -80,41 +91,60 @@
            <height>151</height>
           </rect>
          </property>
+         <property name="font">
+          <font>
+           <family>Ubuntu</family>
+          </font>
+         </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
          </property>
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
          </property>
-         <widget class="QWidget" name="">
+         <widget class="QWidget" name="layoutWidget">
           <property name="geometry">
            <rect>
             <x>10</x>
-            <y>100</y>
-            <width>129</width>
-            <height>29</height>
+            <y>10</y>
+            <width>273</width>
+            <height>34</height>
            </rect>
           </property>
-          <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <layout class="QHBoxLayout" name="horizontalLayout">
            <item>
-            <widget class="QLabel" name="Data_lbl">
+            <widget class="QLabel" name="Port_lbl">
              <property name="text">
-              <string>Data:</string>
+              <string>Port:</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QComboBox" name="Data_cbox"/>
+            <widget class="QComboBox" name="Port_cbox">
+             <property name="editable">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="Parity_lbl">
+             <property name="text">
+              <string>Parity:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="Parity_cbox"/>
            </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="">
+         <widget class="QWidget" name="layoutWidget">
           <property name="geometry">
            <rect>
             <x>10</x>
             <y>50</y>
-            <width>265</width>
-            <height>29</height>
+            <width>268</width>
+            <height>34</height>
            </rect>
           </property>
           <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -140,35 +170,25 @@
            </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="">
+         <widget class="QWidget" name="layoutWidget">
           <property name="geometry">
            <rect>
             <x>10</x>
-            <y>10</y>
-            <width>268</width>
-            <height>29</height>
+            <y>100</y>
+            <width>132</width>
+            <height>34</height>
            </rect>
           </property>
-          <layout class="QHBoxLayout" name="horizontalLayout">
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
            <item>
-            <widget class="QLabel" name="Port_lbl">
+            <widget class="QLabel" name="Data_lbl">
              <property name="text">
-              <string>Port:</string>
+              <string>Data:</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QComboBox" name="Port_cbox"/>
-           </item>
-           <item>
-            <widget class="QLabel" name="Parity_lbl">
-             <property name="text">
-              <string>Parity:</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="Parity_cbox"/>
+            <widget class="QComboBox" name="Data_cbox"/>
            </item>
           </layout>
          </widget>
@@ -178,7 +198,7 @@
           <rect>
            <x>320</x>
            <y>10</y>
-           <width>321</width>
+           <width>312</width>
            <height>151</height>
           </rect>
          </property>
@@ -191,13 +211,13 @@
          <widget class="QWidget" name="">
           <property name="geometry">
            <rect>
-            <x>10</x>
+            <x>11</x>
             <y>10</y>
-            <width>148</width>
-            <height>113</height>
+            <width>235</width>
+            <height>30</height>
            </rect>
           </property>
-          <layout class="QVBoxLayout" name="verticalLayout">
+          <layout class="QHBoxLayout" name="horizontalLayout_11">
            <item>
             <widget class="QPushButton" name="openPort_btn">
              <property name="text">
@@ -206,9 +226,36 @@
             </widget>
            </item>
            <item>
+            <widget class="QPushButton" name="pushButton">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Read Board Settings</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="">
+          <property name="geometry">
+           <rect>
+            <x>11</x>
+            <y>44</y>
+            <width>148</width>
+            <height>83</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
             <widget class="QCheckBox" name="autoOpen_chk">
              <property name="text">
-              <string>Auto OPen</string>
+              <string>Auto Open</string>
              </property>
             </widget>
            </item>
@@ -238,9 +285,9 @@
          <property name="geometry">
           <rect>
            <x>0</x>
-           <y>10</y>
-           <width>321</width>
-           <height>151</height>
+           <y>30</y>
+           <width>318</width>
+           <height>125</height>
           </rect>
          </property>
          <property name="frameShape">
@@ -249,200 +296,187 @@
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
          </property>
-         <widget class="QWidget" name="">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>10</y>
-            <width>298</width>
-            <height>31</height>
-           </rect>
-          </property>
-          <layout class="QHBoxLayout" name="horizontalLayout_4">
-           <item>
-            <widget class="QRadioButton" name="EnaCanal1_rbtn">
-             <property name="font">
-              <font>
-               <pointsize>8</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>Enable</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QRadioButton" name="DisCanal1_rbtn">
-             <property name="font">
-              <font>
-               <pointsize>8</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>Disable</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="rateCanal1_lbl">
-             <property name="font">
-              <font>
-               <pointsize>8</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>Rate:</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QSlider" name="rateCanal1_sld">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="rateIndCanal1_lbl">
-             <property name="text">
-              <string>????</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-         <widget class="QWidget" name="">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>60</y>
-            <width>298</width>
-            <height>31</height>
-           </rect>
-          </property>
-          <layout class="QHBoxLayout" name="horizontalLayout_5">
-           <item>
-            <widget class="QRadioButton" name="EnaCanal2_rbtn">
-             <property name="font">
-              <font>
-               <pointsize>8</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>Enable</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QRadioButton" name="DisCanal2_rbtn">
-             <property name="font">
-              <font>
-               <pointsize>8</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>Disable</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="rateCanal2_lbl">
-             <property name="font">
-              <font>
-               <pointsize>8</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>Rate:</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QSlider" name="rateCanal2_sld">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="rateIndCanal2_lbl">
-             <property name="text">
-              <string>????</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-         <widget class="QWidget" name="">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>110</y>
-            <width>298</width>
-            <height>31</height>
-           </rect>
-          </property>
-          <layout class="QHBoxLayout" name="horizontalLayout_6">
-           <item>
-            <widget class="QRadioButton" name="EnaCanal3_rbtn">
-             <property name="font">
-              <font>
-               <pointsize>8</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>Enable</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QRadioButton" name="DisCanal3_rbtn">
-             <property name="font">
-              <font>
-               <pointsize>8</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>Disable</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="rateCanal3_lbl">
-             <property name="font">
-              <font>
-               <pointsize>8</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>Rate:</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QSlider" name="rateCanal3_sld">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="rateIndCanal3_lbl">
-             <property name="text">
-              <string>????</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <item>
+             <widget class="QRadioButton" name="EnaCanal1_rbtn">
+              <property name="font">
+               <font>
+                <pointsize>8</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Enable</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="DisCanal1_rbtn">
+              <property name="font">
+               <font>
+                <pointsize>8</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Disable</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="rateCanal1_lbl">
+              <property name="font">
+               <font>
+                <pointsize>8</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Rate:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSlider" name="rateCanal1_sld">
+              <property name="maximum">
+               <number>200</number>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="rateIndCanal1_lbl">
+              <property name="text">
+               <string>????</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <widget class="QRadioButton" name="EnaCanal2_rbtn">
+              <property name="font">
+               <font>
+                <pointsize>8</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Enable</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="DisCanal2_rbtn">
+              <property name="font">
+               <font>
+                <pointsize>8</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Disable</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="rateCanal2_lbl">
+              <property name="font">
+               <font>
+                <pointsize>8</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Rate:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSlider" name="rateCanal2_sld">
+              <property name="maximum">
+               <number>200</number>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="rateIndCanal2_lbl">
+              <property name="text">
+               <string>????</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_6">
+            <item>
+             <widget class="QRadioButton" name="EnaCanal3_rbtn">
+              <property name="font">
+               <font>
+                <pointsize>8</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Enable</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="DisCanal3_rbtn">
+              <property name="font">
+               <font>
+                <pointsize>8</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Disable</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="rateCanal3_lbl">
+              <property name="font">
+               <font>
+                <pointsize>8</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Rate:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSlider" name="rateCanal3_sld">
+              <property name="maximum">
+               <number>200</number>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="rateIndCanal3_lbl">
+              <property name="text">
+               <string>????</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
         </widget>
         <widget class="QFrame" name="frame_4">
          <property name="geometry">
           <rect>
-           <x>329</x>
-           <y>9</y>
-           <width>311</width>
-           <height>151</height>
+           <x>330</x>
+           <y>30</y>
+           <width>318</width>
+           <height>125</height>
           </rect>
          </property>
          <property name="frameShape">
@@ -451,207 +485,233 @@
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
          </property>
-         <widget class="QWidget" name="">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>10</y>
-            <width>298</width>
-            <height>31</height>
-           </rect>
-          </property>
-          <layout class="QHBoxLayout" name="horizontalLayout_7">
-           <item>
-            <widget class="QRadioButton" name="EnaCanal4_rbtn">
-             <property name="font">
-              <font>
-               <pointsize>8</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>Enable</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QRadioButton" name="DisCanal4_rbtn">
-             <property name="font">
-              <font>
-               <pointsize>8</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>Disable</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="rateCanal4_lbl">
-             <property name="font">
-              <font>
-               <pointsize>8</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>Rate:</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QSlider" name="rateCanal4_sld">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="rateIndCanal4_lbl">
-             <property name="text">
-              <string>????</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-         <widget class="QWidget" name="">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>60</y>
-            <width>298</width>
-            <height>31</height>
-           </rect>
-          </property>
-          <layout class="QHBoxLayout" name="horizontalLayout_8">
-           <item>
-            <widget class="QRadioButton" name="EnaCanal5_rbtn">
-             <property name="font">
-              <font>
-               <pointsize>8</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>Enable</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QRadioButton" name="DisCanal5_rbtn">
-             <property name="font">
-              <font>
-               <pointsize>8</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>Disable</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="rateCanal5_lbl">
-             <property name="font">
-              <font>
-               <pointsize>8</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>Rate:</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QSlider" name="rateCanal5_sld">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="rateIndCanal5_lbl">
-             <property name="text">
-              <string>????</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-         <widget class="QWidget" name="">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>110</y>
-            <width>298</width>
-            <height>31</height>
-           </rect>
-          </property>
-          <layout class="QHBoxLayout" name="horizontalLayout_9">
-           <item>
-            <widget class="QRadioButton" name="EnaCanal6_rbtn">
-             <property name="font">
-              <font>
-               <pointsize>8</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>Enable</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QRadioButton" name="DisCanal6_rbtn">
-             <property name="font">
-              <font>
-               <pointsize>8</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>Disable</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="rateCanal6_lbl">
-             <property name="font">
-              <font>
-               <pointsize>8</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>Rate:</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QSlider" name="rateCanal6_sld">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="rateIndCanal6_lbl">
-             <property name="text">
-              <string>????</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_7">
+            <item>
+             <widget class="QRadioButton" name="EnaCanal4_rbtn">
+              <property name="font">
+               <font>
+                <pointsize>8</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Enable</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="DisCanal4_rbtn">
+              <property name="font">
+               <font>
+                <pointsize>8</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Disable</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="rateCanal4_lbl">
+              <property name="font">
+               <font>
+                <pointsize>8</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Rate:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSlider" name="rateCanal4_sld">
+              <property name="maximum">
+               <number>200</number>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="rateIndCanal4_lbl">
+              <property name="text">
+               <string>????</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_8">
+            <item>
+             <widget class="QRadioButton" name="EnaCanal5_rbtn">
+              <property name="font">
+               <font>
+                <pointsize>8</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Enable</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="DisCanal5_rbtn">
+              <property name="font">
+               <font>
+                <pointsize>8</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Disable</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="rateCanal5_lbl">
+              <property name="font">
+               <font>
+                <pointsize>8</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Rate:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSlider" name="rateCanal5_sld">
+              <property name="maximum">
+               <number>200</number>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="rateIndCanal5_lbl">
+              <property name="text">
+               <string>????</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_9">
+            <item>
+             <widget class="QRadioButton" name="EnaCanal6_rbtn">
+              <property name="font">
+               <font>
+                <pointsize>8</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Enable</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="DisCanal6_rbtn">
+              <property name="font">
+               <font>
+                <pointsize>8</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Disable</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="rateCanal6_lbl">
+              <property name="font">
+               <font>
+                <pointsize>8</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Rate:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSlider" name="rateCanal6_sld">
+              <property name="maximum">
+               <number>200</number>
+              </property>
+              <property name="value">
+               <number>0</number>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="rateIndCanal6_lbl">
+              <property name="text">
+               <string>????</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QLabel" name="SpWPort13_lbl">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>10</y>
+           <width>151</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Space Wire Port 1 - 3</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="SpWPort46_lbl">
+         <property name="geometry">
+          <rect>
+           <x>330</x>
+           <y>10</y>
+           <width>151</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Space Wire Port 4 - 6</string>
+         </property>
         </widget>
        </widget>
        <widget class="QWidget" name="Genertator">
         <attribute name="title">
-         <string>Page</string>
+         <string>Generator</string>
         </attribute>
        </widget>
        <widget class="QWidget" name="Board">
         <attribute name="title">
-         <string>Page</string>
+         <string>Board</string>
         </attribute>
        </widget>
        <widget class="QWidget" name="About">
         <attribute name="title">
-         <string>Page</string>
+         <string>About</string>
         </attribute>
        </widget>
       </widget>
@@ -664,8 +724,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>669</width>
-     <height>25</height>
+     <width>672</width>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuSpace_Wire_Terminal">
@@ -678,6 +738,11 @@
    <addaction name="menuSpace_Wire_Terminal"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+    </font>
+   </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
    </attribute>
