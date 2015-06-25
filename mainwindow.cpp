@@ -1,12 +1,19 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QMessageBox>
+#include <QtSerialPort/QSerialPort>
+#include <QtSerialPort/QSerialPortInfo>
+#include <QDebug>
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->actionExit->setEnabled(true);
+    connect(ui->actionExit,SIGNAL(triggered()),this,SLOT(close()));
+    foreach (const QSerialPortInfo &info, QSerialPortInfo::availablePorts()) {
+        ui->Port_cbox->addItem(info.portName());
+    }
+
 }
 
 MainWindow::~MainWindow()
@@ -26,3 +33,5 @@ void MainWindow::on_actionHelp_triggered()
                           "use the Qt Serial Port module in modern GUI applications "
                           "using Qt, with a menu bar, toolbars, and a status bar."));
 }
+
+

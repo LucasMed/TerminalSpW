@@ -22,7 +22,7 @@
    </font>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Space Wire Terminal</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QWidget" name="layoutWidget">
@@ -76,7 +76,7 @@
      <item>
       <widget class="QTabWidget" name="tabWidget">
        <property name="currentIndex">
-        <number>0</number>
+        <number>1</number>
        </property>
        <widget class="QWidget" name="Serial">
         <attribute name="title">
@@ -208,7 +208,7 @@
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
          </property>
-         <widget class="QWidget" name="">
+         <widget class="QWidget" name="layoutWidget">
           <property name="geometry">
            <rect>
             <x>11</x>
@@ -242,7 +242,7 @@
            </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="">
+         <widget class="QWidget" name="layoutWidget">
           <property name="geometry">
            <rect>
             <x>11</x>
@@ -286,7 +286,7 @@
           <rect>
            <x>0</x>
            <y>30</y>
-           <width>318</width>
+           <width>311</width>
            <height>125</height>
           </rect>
          </property>
@@ -475,7 +475,7 @@
           <rect>
            <x>330</x>
            <y>30</y>
-           <width>318</width>
+           <width>312</width>
            <height>125</height>
           </rect>
          </property>
@@ -730,7 +730,7 @@
    </property>
    <widget class="QMenu" name="menuSpace_Wire_Terminal">
     <property name="title">
-     <string>Space Wire Terminal</string>
+     <string>Menu</string>
     </property>
     <addaction name="actionHelp"/>
     <addaction name="actionExit"/>
@@ -764,5 +764,102 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>rateCanal1_sld</sender>
+   <signal>sliderMoved(int)</signal>
+   <receiver>rateIndCanal1_lbl</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>230</x>
+     <y>381</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>302</x>
+     <y>382</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rateCanal2_sld</sender>
+   <signal>sliderMoved(int)</signal>
+   <receiver>rateIndCanal2_lbl</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>412</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>303</x>
+     <y>412</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rateCanal3_sld</sender>
+   <signal>sliderMoved(int)</signal>
+   <receiver>rateIndCanal3_lbl</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>243</x>
+     <y>455</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>303</x>
+     <y>458</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rateCanal4_sld</sender>
+   <signal>sliderMoved(int)</signal>
+   <receiver>rateIndCanal4_lbl</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>560</x>
+     <y>381</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>633</x>
+     <y>383</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rateCanal5_sld</sender>
+   <signal>sliderMoved(int)</signal>
+   <receiver>rateIndCanal5_lbl</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>554</x>
+     <y>409</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>628</x>
+     <y>415</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rateCanal6_sld</sender>
+   <signal>sliderMoved(int)</signal>
+   <receiver>rateIndCanal6_lbl</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>550</x>
+     <y>439</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>631</x>
+     <y>447</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
