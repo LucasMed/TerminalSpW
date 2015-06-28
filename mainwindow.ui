@@ -30,8 +30,8 @@
      <rect>
       <x>9</x>
       <y>9</y>
-      <width>661</width>
-      <height>441</height>
+      <width>651</width>
+      <height>451</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -93,99 +93,97 @@
          </property>
          <property name="font">
           <font>
-           <family>Ubuntu</family>
+           <family>Times New Roman</family>
           </font>
          </property>
-         <widget class="QWidget" name="layoutWidget">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>10</y>
-            <width>271</width>
-            <height>34</height>
-           </rect>
-          </property>
-          <layout class="QHBoxLayout" name="horizontalLayout">
-           <item>
-            <widget class="QLabel" name="Port_lbl">
-             <property name="text">
-              <string>Port:</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="Port_cbox">
-             <property name="editable">
-              <bool>false</bool>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="Parity_lbl">
-             <property name="text">
-              <string>Parity:</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="Parity_cbox"/>
-           </item>
-          </layout>
-         </widget>
-         <widget class="QWidget" name="layoutWidget">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>50</y>
-            <width>271</width>
-            <height>34</height>
-           </rect>
-          </property>
-          <layout class="QHBoxLayout" name="horizontalLayout_2">
-           <item>
-            <widget class="QLabel" name="Baud_lbl">
-             <property name="text">
-              <string>Baud:</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="Baud_cbox"/>
-           </item>
-           <item>
-            <widget class="QLabel" name="Stop_lbl">
-             <property name="text">
-              <string>Stop:</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="Stop_cbox"/>
-           </item>
-          </layout>
-         </widget>
-         <widget class="QWidget" name="layoutWidget">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>100</y>
-            <width>132</width>
-            <height>34</height>
-           </rect>
-          </property>
-          <layout class="QHBoxLayout" name="horizontalLayout_3">
-           <item>
-            <widget class="QLabel" name="Data_lbl">
-             <property name="text">
-              <string>Data:</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="Data_cbox"/>
-           </item>
-          </layout>
-         </widget>
+         <property name="contextMenuPolicy">
+          <enum>Qt::PreventContextMenu</enum>
+         </property>
+         <property name="title">
+          <string>Settings</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="0" column="0">
+           <widget class="QLabel" name="Port_lbl">
+            <property name="text">
+             <string>Port:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QComboBox" name="Port_cbox">
+            <property name="editable">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2" colspan="2">
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>69</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="0" column="4">
+           <widget class="QLabel" name="Parity_lbl">
+            <property name="text">
+             <string>Parity:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="5">
+           <widget class="QComboBox" name="Parity_cbox"/>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="Baud_lbl">
+            <property name="text">
+             <string>Baud:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QComboBox" name="Baud_cbox"/>
+          </item>
+          <item row="1" column="3">
+           <spacer name="horizontalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>63</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="1" column="4">
+           <widget class="QLabel" name="Stop_lbl">
+            <property name="text">
+             <string>Stop:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="5">
+           <widget class="QComboBox" name="Stop_cbox"/>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="Data_lbl">
+            <property name="text">
+             <string>Data:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QComboBox" name="Data_cbox"/>
+          </item>
+         </layout>
         </widget>
         <widget class="QGroupBox" name="groupBox_2">
          <property name="geometry">
@@ -196,11 +194,14 @@
            <height>161</height>
           </rect>
          </property>
+         <property name="title">
+          <string>Control</string>
+         </property>
          <widget class="QWidget" name="layoutWidget">
           <property name="geometry">
            <rect>
-            <x>11</x>
-            <y>10</y>
+            <x>10</x>
+            <y>20</y>
             <width>235</width>
             <height>30</height>
            </rect>
@@ -233,8 +234,8 @@
          <widget class="QWidget" name="layoutWidget">
           <property name="geometry">
            <rect>
-            <x>11</x>
-            <y>44</y>
+            <x>10</x>
+            <y>60</y>
             <width>148</width>
             <height>83</height>
            </rect>
@@ -332,8 +333,11 @@
            </item>
            <item>
             <widget class="QSlider" name="rateCanal3_sld">
+             <property name="minimum">
+              <number>323</number>
+             </property>
              <property name="maximum">
-              <number>200</number>
+              <number>323</number>
              </property>
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
@@ -400,8 +404,11 @@
            </item>
            <item>
             <widget class="QSlider" name="rateCanal2_sld">
+             <property name="minimum">
+              <number>323</number>
+             </property>
              <property name="maximum">
-              <number>200</number>
+              <number>323</number>
              </property>
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
@@ -468,8 +475,11 @@
            </item>
            <item>
             <widget class="QSlider" name="rateCanal1_sld">
+             <property name="minimum">
+              <number>323</number>
+             </property>
              <property name="maximum">
-              <number>200</number>
+              <number>323</number>
              </property>
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
@@ -549,8 +559,11 @@
            </item>
            <item>
             <widget class="QSlider" name="rateCanal4_sld">
+             <property name="minimum">
+              <number>323</number>
+             </property>
              <property name="maximum">
-              <number>200</number>
+              <number>323</number>
              </property>
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
@@ -617,8 +630,11 @@
            </item>
            <item>
             <widget class="QSlider" name="rateCanal5_sld">
+             <property name="minimum">
+              <number>323</number>
+             </property>
              <property name="maximum">
-              <number>200</number>
+              <number>323</number>
              </property>
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
@@ -685,11 +701,14 @@
            </item>
            <item>
             <widget class="QSlider" name="rateCanal6_sld">
+             <property name="minimum">
+              <number>323</number>
+             </property>
              <property name="maximum">
-              <number>200</number>
+              <number>323</number>
              </property>
              <property name="value">
-              <number>0</number>
+              <number>323</number>
              </property>
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
@@ -711,16 +730,382 @@
         <attribute name="title">
          <string>Generator</string>
         </attribute>
+        <widget class="QGroupBox" name="groupBox_5">
+         <property name="geometry">
+          <rect>
+           <x>9</x>
+           <y>9</y>
+           <width>311</width>
+           <height>161</height>
+          </rect>
+         </property>
+         <property name="title">
+          <string>Data Give</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_12">
+            <item>
+             <widget class="QLabel" name="label">
+              <property name="text">
+               <string>Header:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="comboBox"/>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>18</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_4">
+              <property name="text">
+               <string>Terminator:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="comboBox_2"/>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_13">
+            <item>
+             <widget class="QLabel" name="label_2">
+              <property name="text">
+               <string>Gap:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSlider" name="horizontalSlider">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_7">
+              <property name="text">
+               <string>0</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_5">
+              <property name="text">
+               <string>Type:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="comboBox_3"/>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_14">
+            <item>
+             <widget class="QLabel" name="label_3">
+              <property name="text">
+               <string>Size:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSlider" name="horizontalSlider_2">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_8">
+              <property name="text">
+               <string>0</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_6">
+              <property name="text">
+               <string>Type:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="comboBox_4"/>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QGroupBox" name="groupBox_6">
+         <property name="geometry">
+          <rect>
+           <x>330</x>
+           <y>10</y>
+           <width>296</width>
+           <height>81</height>
+          </rect>
+         </property>
+         <property name="title">
+          <string>Data Take</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_9">
+            <property name="text">
+             <string>Gap:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QSlider" name="horizontalSlider_3">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <spacer name="horizontalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>13</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="0" column="3">
+           <widget class="QLabel" name="label_10">
+            <property name="text">
+             <string>0</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="4">
+           <spacer name="horizontalSpacer_5">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>13</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="0" column="5">
+           <widget class="QLabel" name="label_11">
+            <property name="text">
+             <string>Type:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="6">
+           <widget class="QComboBox" name="comboBox_5"/>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QGroupBox" name="groupBox_7">
+         <property name="geometry">
+          <rect>
+           <x>330</x>
+           <y>85</y>
+           <width>296</width>
+           <height>81</height>
+          </rect>
+         </property>
+         <property name="title">
+          <string>Time Give</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_3">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_12">
+            <property name="text">
+             <string>Gap:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QSlider" name="horizontalSlider_4">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <spacer name="horizontalSpacer_6">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>13</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="0" column="3">
+           <widget class="QLabel" name="label_13">
+            <property name="text">
+             <string>0</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="4">
+           <spacer name="horizontalSpacer_7">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>13</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="0" column="5">
+           <widget class="QLabel" name="label_14">
+            <property name="text">
+             <string>Type:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="6">
+           <widget class="QComboBox" name="comboBox_6"/>
+          </item>
+         </layout>
+        </widget>
        </widget>
        <widget class="QWidget" name="Board">
         <attribute name="title">
          <string>Board</string>
         </attribute>
+        <widget class="QGroupBox" name="groupBox_8">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>10</y>
+           <width>251</width>
+           <height>151</height>
+          </rect>
+         </property>
+         <property name="title">
+          <string>Information</string>
+         </property>
+         <widget class="QWidget" name="">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>24</y>
+            <width>151</width>
+            <height>71</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_6">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_17">
+             <item>
+              <widget class="QLabel" name="label_15">
+               <property name="text">
+                <string>Board Ident:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_16">
+               <property name="text">
+                <string>Unknown</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_18">
+             <item>
+              <widget class="QLabel" name="label_17">
+               <property name="text">
+                <string>Board Serial:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_18">
+               <property name="text">
+                <string>Unknown</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </widget>
        </widget>
        <widget class="QWidget" name="About">
         <attribute name="title">
          <string>About</string>
         </attribute>
+        <widget class="QGroupBox" name="groupBox_9">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>10</y>
+           <width>301</width>
+           <height>151</height>
+          </rect>
+         </property>
+         <property name="title">
+          <string>Program Details</string>
+         </property>
+         <widget class="QLabel" name="label_19">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>20</y>
+            <width>241</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>SpaceWire Development Board Terminal (V1.00)</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QGroupBox" name="groupBox_10">
+         <property name="geometry">
+          <rect>
+           <x>320</x>
+           <y>10</y>
+           <width>321</width>
+           <height>151</height>
+          </rect>
+         </property>
+         <property name="title">
+          <string>Web Links</string>
+         </property>
+        </widget>
        </widget>
       </widget>
      </item>
@@ -771,6 +1156,40 @@
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>TxData_inpTxt</tabstop>
+  <tabstop>Transmit_btn</tabstop>
+  <tabstop>Port_cbox</tabstop>
+  <tabstop>Parity_cbox</tabstop>
+  <tabstop>Baud_cbox</tabstop>
+  <tabstop>Stop_cbox</tabstop>
+  <tabstop>Data_cbox</tabstop>
+  <tabstop>openPort_btn</tabstop>
+  <tabstop>autoOpen_chk</tabstop>
+  <tabstop>autoReadBoard_chk</tabstop>
+  <tabstop>echoTxData_chk</tabstop>
+  <tabstop>pushButton</tabstop>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>textBrowser</tabstop>
+  <tabstop>EnaCanal1_rbtn</tabstop>
+  <tabstop>DisCanal1_rbtn</tabstop>
+  <tabstop>rateCanal1_sld</tabstop>
+  <tabstop>EnaCanal2_rbtn</tabstop>
+  <tabstop>DisCanal2_rbtn</tabstop>
+  <tabstop>rateCanal2_sld</tabstop>
+  <tabstop>EnaCanal3_rbtn</tabstop>
+  <tabstop>DisCanal3_rbtn</tabstop>
+  <tabstop>rateCanal3_sld</tabstop>
+  <tabstop>EnaCanal4_rbtn</tabstop>
+  <tabstop>DisCanal4_rbtn</tabstop>
+  <tabstop>rateCanal4_sld</tabstop>
+  <tabstop>EnaCanal5_rbtn</tabstop>
+  <tabstop>DisCanal5_rbtn</tabstop>
+  <tabstop>rateCanal5_sld</tabstop>
+  <tabstop>EnaCanal6_rbtn</tabstop>
+  <tabstop>DisCanal6_rbtn</tabstop>
+  <tabstop>rateCanal6_sld</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>

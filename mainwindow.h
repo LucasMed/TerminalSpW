@@ -22,6 +22,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    void inicializarCombos();
 };
 
 #endif // MAINWINDOW_H
