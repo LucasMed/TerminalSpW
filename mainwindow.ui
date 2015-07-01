@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>672</width>
-    <height>515</height>
+    <height>533</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -39,44 +39,12 @@
       <widget class="QTextBrowser" name="textBrowser"/>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_10">
-       <item>
-        <widget class="QLabel" name="TxData_lbl">
-         <property name="text">
-          <string>Tx Data :</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="TxData_inpTxt"/>
-       </item>
-       <item>
-        <widget class="QPushButton" name="Transmit_btn">
-         <property name="text">
-          <string>Transmit</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="Time_lbl">
-         <property name="text">
-          <string>Time: </string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="TimeInd_lbl">
-         <property name="text">
-          <string>--:--</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
       <widget class="QTabWidget" name="tabWidget">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
        <property name="currentIndex">
-        <number>0</number>
+        <number>1</number>
        </property>
        <widget class="QWidget" name="Serial">
         <attribute name="title">
@@ -271,6 +239,9 @@
          <string>Space Wire</string>
         </attribute>
         <widget class="QGroupBox" name="groupBox_3">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
          <property name="geometry">
           <rect>
            <x>0</x>
@@ -282,13 +253,13 @@
          <property name="title">
           <string>Space Wire Port 1 - 3</string>
          </property>
-         <widget class="QWidget" name="">
+         <widget class="QWidget" name="layoutWidget">
           <property name="geometry">
            <rect>
             <x>11</x>
             <y>114</y>
             <width>264</width>
-            <height>21</height>
+            <height>31</height>
            </rect>
           </property>
           <layout class="QHBoxLayout" name="horizontalLayout_6">
@@ -334,10 +305,13 @@
            <item>
             <widget class="QSlider" name="rateCanal3_sld">
              <property name="minimum">
-              <number>323</number>
+              <number>0</number>
              </property>
              <property name="maximum">
-              <number>323</number>
+              <number>200</number>
+             </property>
+             <property name="value">
+              <number>0</number>
              </property>
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
@@ -353,13 +327,13 @@
            </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="">
+         <widget class="QWidget" name="layoutWidget">
           <property name="geometry">
            <rect>
             <x>11</x>
             <y>69</y>
             <width>264</width>
-            <height>21</height>
+            <height>31</height>
            </rect>
           </property>
           <layout class="QHBoxLayout" name="horizontalLayout_5">
@@ -405,10 +379,13 @@
            <item>
             <widget class="QSlider" name="rateCanal2_sld">
              <property name="minimum">
-              <number>323</number>
+              <number>0</number>
              </property>
              <property name="maximum">
-              <number>323</number>
+              <number>200</number>
+             </property>
+             <property name="value">
+              <number>0</number>
              </property>
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
@@ -424,13 +401,13 @@
            </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="">
+         <widget class="QWidget" name="layoutWidget">
           <property name="geometry">
            <rect>
             <x>11</x>
             <y>25</y>
             <width>264</width>
-            <height>21</height>
+            <height>31</height>
            </rect>
           </property>
           <layout class="QHBoxLayout" name="horizontalLayout_4">
@@ -476,10 +453,13 @@
            <item>
             <widget class="QSlider" name="rateCanal1_sld">
              <property name="minimum">
-              <number>323</number>
+              <number>0</number>
              </property>
              <property name="maximum">
-              <number>323</number>
+              <number>200</number>
+             </property>
+             <property name="value">
+              <number>0</number>
              </property>
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
@@ -497,6 +477,9 @@
          </widget>
         </widget>
         <widget class="QGroupBox" name="groupBox_4">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
          <property name="geometry">
           <rect>
            <x>330</x>
@@ -508,13 +491,13 @@
          <property name="title">
           <string>Space Wire Port 4 - 6</string>
          </property>
-         <widget class="QWidget" name="">
+         <widget class="QWidget" name="layoutWidget">
           <property name="geometry">
            <rect>
             <x>11</x>
             <y>25</y>
             <width>264</width>
-            <height>21</height>
+            <height>31</height>
            </rect>
           </property>
           <layout class="QHBoxLayout" name="horizontalLayout_7">
@@ -560,10 +543,13 @@
            <item>
             <widget class="QSlider" name="rateCanal4_sld">
              <property name="minimum">
-              <number>323</number>
+              <number>0</number>
              </property>
              <property name="maximum">
-              <number>323</number>
+              <number>200</number>
+             </property>
+             <property name="value">
+              <number>0</number>
              </property>
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
@@ -579,13 +565,13 @@
            </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="">
+         <widget class="QWidget" name="layoutWidget">
           <property name="geometry">
            <rect>
             <x>11</x>
             <y>69</y>
             <width>264</width>
-            <height>21</height>
+            <height>31</height>
            </rect>
           </property>
           <layout class="QHBoxLayout" name="horizontalLayout_8">
@@ -631,10 +617,13 @@
            <item>
             <widget class="QSlider" name="rateCanal5_sld">
              <property name="minimum">
-              <number>323</number>
+              <number>0</number>
              </property>
              <property name="maximum">
-              <number>323</number>
+              <number>200</number>
+             </property>
+             <property name="value">
+              <number>0</number>
              </property>
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
@@ -650,13 +639,13 @@
            </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="">
+         <widget class="QWidget" name="layoutWidget">
           <property name="geometry">
            <rect>
             <x>11</x>
             <y>114</y>
             <width>264</width>
-            <height>21</height>
+            <height>31</height>
            </rect>
           </property>
           <layout class="QHBoxLayout" name="horizontalLayout_9">
@@ -702,13 +691,13 @@
            <item>
             <widget class="QSlider" name="rateCanal6_sld">
              <property name="minimum">
-              <number>323</number>
+              <number>0</number>
              </property>
              <property name="maximum">
-              <number>323</number>
+              <number>200</number>
              </property>
              <property name="value">
-              <number>323</number>
+              <number>0</number>
              </property>
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
@@ -1013,7 +1002,7 @@
          <property name="title">
           <string>Information</string>
          </property>
-         <widget class="QWidget" name="">
+         <widget class="QWidget" name="layoutWidget">
           <property name="geometry">
            <rect>
             <x>10</x>
@@ -1084,7 +1073,7 @@
            <rect>
             <x>20</x>
             <y>20</y>
-            <width>241</width>
+            <width>251</width>
             <height>16</height>
            </rect>
           </property>
@@ -1109,6 +1098,41 @@
        </widget>
       </widget>
      </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_10">
+       <item>
+        <widget class="QLabel" name="TxData_lbl">
+         <property name="text">
+          <string>Tx Data :</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="TxData_inpTxt"/>
+       </item>
+       <item>
+        <widget class="QPushButton" name="Transmit_btn">
+         <property name="text">
+          <string>Transmit</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="Time_lbl">
+         <property name="text">
+          <string>Time: </string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="TimeInd_lbl">
+         <property name="text">
+          <string>--:--</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
     </layout>
    </widget>
   </widget>
@@ -1118,7 +1142,7 @@
      <x>0</x>
      <y>0</y>
      <width>672</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuSpace_Wire_Terminal">
@@ -1169,11 +1193,9 @@
   <tabstop>autoReadBoard_chk</tabstop>
   <tabstop>echoTxData_chk</tabstop>
   <tabstop>pushButton</tabstop>
-  <tabstop>tabWidget</tabstop>
   <tabstop>textBrowser</tabstop>
   <tabstop>EnaCanal1_rbtn</tabstop>
   <tabstop>DisCanal1_rbtn</tabstop>
-  <tabstop>rateCanal1_sld</tabstop>
   <tabstop>EnaCanal2_rbtn</tabstop>
   <tabstop>DisCanal2_rbtn</tabstop>
   <tabstop>rateCanal2_sld</tabstop>
