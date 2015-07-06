@@ -39,12 +39,19 @@ private slots:
 
     void on_openPort_btn_clicked();
 
+    void on_Transmit_btn_clicked();
+
 private:
     Ui::MainWindow *ui;
     QSerialPort *serial;
     Settings *p;
     void inicializarCombos();
     void updateSetting();
+protected:
+    bool sendString(const QString& s);
+    bool sendByte(char c, unsigned int delay);
+
+    int m_fd;
 };
 
 #endif // MAINWINDOW_H

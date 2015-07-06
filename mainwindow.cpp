@@ -5,6 +5,17 @@
 #include <QtSerialPort/QSerialPortInfo>
 #include <QDebug>
 #include <QList>
+
+void millisleep(int ms)
+{
+   if (ms>0)
+   {
+      struct timeval tv;
+      tv.tv_sec=0;
+      tv.tv_usec=ms*1000;
+      select(0, 0, 0, 0, &tv);
+   }
+}
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -15,7 +26,6 @@ MainWindow::MainWindow(QWidget *parent) :
 
     serial = new QSerialPort();
     connect(ui->actionExit,SIGNAL(triggered()),this,SLOT(close()));
-    connect(serial, SIGNAL(readyRead()), this, SLOT(readData()));
     p = new Settings();
     inicializarCombos();
 
@@ -80,7 +90,7 @@ void MainWindow::inicializarCombos()
 
 void MainWindow::on_openPort_btn_clicked()
 {
-    const char * data = "Hola";
+
 
     p->dataBits = static_cast<QSerialPort::DataBits>(
                     ui->Data_cbox->itemData(ui->Data_cbox->currentIndex()).toInt());
@@ -88,6 +98,8 @@ void MainWindow::on_openPort_btn_clicked()
                 ui->Parity_cbox->itemData(ui->Parity_cbox->currentIndex()).toInt());
     p->stopBits = static_cast<QSerialPort::StopBits>(
                 ui->Stop_cbox->itemData(ui->Stop_cbox->currentIndex()).toInt());
+
+
     serial->setPortName(ui->Port_cbox->currentText());
     serial->setBaudRate(qint32 (ui->Baud_cbox->currentText().toInt()));
     p->stringBaudRate = ui->Baud_cbox->currentText();
@@ -97,19 +109,93 @@ void MainWindow::on_openPort_btn_clicked()
     p->stringParity = ui->Parity_cbox->currentText();
     serial->setStopBits(p->stopBits);
     p->stringStopBits = ui->Stop_cbox->currentText();
+
+
     if (serial->isOpen()) {
+        ui->openPort_btn->setText("Open Port");
+        ui->statusBar->showMessage(tr("Close Port"));
         serial->close();
     } else {
         if (serial->open(QIODevice::ReadWrite)) {
+            ui->openPort_btn->setText("Close Port");
                 ui->statusBar->showMessage(tr("Connected to %1 : %2, %3, %4, %5, %6")
                                            .arg(serial->portName()).arg(p->stringBaudRate).arg(p->stringDataBits)
                                            .arg(p->stringParity).arg(p->stopBits).arg("hola"));
-                serial->write(data,qstrlen(data));
+
         } else {
             QMessageBox::critical(this, tr("Error"), serial->errorString());
 
             ui->statusBar->showMessage(tr("Open error"));
         }
     }
+
+}
+
+void MainWindow::on_Transmit_btn_clicked()
+{
+
+    QString cmd = ui->TxData_inpTxt->text().trimmed();
+    ui->TxData_inpTxt->clear();
+    ui->textBrowser->append("TX: " + cmd);
+
+    sendString(cmd);
+
+
+}
+
+bool MainWindow::sendString(const QString &s)
+{
+    unsigned int charDelay=1;
+
+    QString hex = s;
+    hex.remove(QRegExp("\\s"));
+    if ((hex.startsWith("0x")) || (hex.startsWith("0X")))
+    {
+       hex=hex.mid(2);
+    }
+
+    if (hex.length()%2 != 0)
+    {
+       hex="0"+hex;
+    }
+
+    for (int i=0; i<hex.length()/2; i++)
+    {
+       QString nextByte=hex.mid(i*2, 2);
+       bool ok=true;
+       nextByte.toUInt(&ok, 16);
+       if (!ok)
+       {
+          QMessageBox::information(this, tr("Invalid hex characters"), tr("The input string contains invalid hex characters: 0x%1").arg(nextByte));
+          return false;
+       }
+    }
+
+    for (int i=0; i<hex.length()/2; i++)
+    {
+       QString nextByte=hex.mid(i*2, 2);
+       unsigned int byte=nextByte.toUInt(0, 16);
+       sendByte(byte & 0xff, charDelay);
+       // fprintf(stderr, " 0x%x d:%d ", byte & 0xff, charDelay);
+    }
+    return true;
+
+}
+
+bool MainWindow::sendByte(char c, unsigned int delay)
+{
+
+    int res=serial->write(&c, 1);
+ //   std::cerr<<"wrote "<<(unsigned int)(c)<<std::endl;
+    if (res<1)
+    {
+       //std::cerr<<"write returned "<<res<<" errno: "<<errno<<std::endl;
+       //perror("write\n");
+        qDebug() << false;
+       return false;
+    }
+    millisleep(delay);
+    qDebug() << true;
+    return true;
 
 }
