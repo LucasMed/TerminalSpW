@@ -40,7 +40,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->actionExit,SIGNAL(triggered()),this,SLOT(close()));
     p = new Settings();
     inicializarCombos();
-
+    deshabilitarInterfaz();
 
 }
 
@@ -127,12 +127,18 @@ void MainWindow::on_openPort_btn_clicked()
     p->stringStopBits = ui->Stop_cbox->currentText();
 
 
-    if (serial->isOpen()) {
+    if (serial->isOpen()) {  //Si el puerto está abierto lo cierro
+
         ui->openPort_btn->setText("Open Port");
+        deshabilitarInterfaz();
         ui->statusBar->showMessage(tr("Close Port"));
         serial->close();
+
     } else {
-        if (serial->open(QIODevice::ReadWrite)) {
+
+        if (serial->open(QIODevice::ReadWrite)) { //sino está abierto lo abro
+
+            habilitarInterfaz();
             ui->openPort_btn->setText("Close Port");
                 ui->statusBar->showMessage(tr("Connected to %1 : %2, %3, %4, %5, %6")
                                            .arg(serial->portName()).arg(p->stringBaudRate).arg(p->stringDataBits)
@@ -192,7 +198,7 @@ bool MainWindow::sendString(const QString &s)
        QString nextByte=hex.mid(i*2, 2);
        unsigned int byte=nextByte.toUInt(0, 16);
        sendByte(byte & 0xff, charDelay);
-       // fprintf(stderr, " 0x%x d:%d ", byte & 0xff, charDelay);
+
     }
     return true;
 
@@ -202,17 +208,37 @@ bool MainWindow::sendByte(char c, unsigned int delay)
 {
 
     int res=serial->write(&c, 1);
- //   std::cerr<<"wrote "<<(unsigned int)(c)<<std::endl;
+
     if (res<1)
     {
-       //std::cerr<<"write returned "<<res<<" errno: "<<errno<<std::endl;
-       //perror("write\n");
         qDebug() << false;
-       return false;
+        return false;
     }
     millisleep(delay);
     qDebug() << true;
     return true;
 
+}
+
+void MainWindow::habilitarInterfaz()
+{
+    ui->groupBox_3->setEnabled(true); //hablito la pestaña SpaceWire Canal 1-3
+    ui->groupBox_4->setEnabled(true); //hablito la pestaña SpaceWire Canal 4-6
+    ui->groupBox->setDisabled(true);  //deshabilito la pestaña Setting para que no cambie la configuración
+    ui->autoOpen_chk->setDisabled(true);
+    ui->autoReadBoard_chk->setDisabled(true);
+    ui->echoTxData_chk->setDisabled(true);
+    ui->Transmit_btn->setEnabled(true);
+}
+
+void MainWindow::deshabilitarInterfaz()
+{
+    ui->groupBox_3->setEnabled(false); //deshablito la pestaña SpaceWire Canal 1-3
+    ui->groupBox_4->setEnabled(false); //deshablito la pestaña SpaceWire Canal 4-6
+    ui->groupBox->setDisabled(false);  //habilito la pestaña Setting para que no cambie la configuración
+    ui->autoOpen_chk->setDisabled(false);
+    ui->autoReadBoard_chk->setDisabled(false);
+    ui->echoTxData_chk->setDisabled(false);
+    ui->Transmit_btn->setDisabled(true);
 }
 

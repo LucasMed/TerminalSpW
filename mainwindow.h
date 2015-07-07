@@ -51,6 +51,8 @@ private:
 protected:
     bool sendString(const QString& s);
     bool sendByte(char c, unsigned int delay);
+    void habilitarInterfaz();
+    void deshabilitarInterfaz();
 
     int m_fd;
 
