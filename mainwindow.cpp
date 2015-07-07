@@ -97,7 +97,7 @@ void MainWindow::inicializarCombos()
     ui->Parity_cbox->setCurrentIndex(0);
 
     ui->Stop_cbox->addItem(QStringLiteral("1"), QSerialPort::OneStop);
-    ui->Stop_cbox->addItem(tr("1.5"), QSerialPort::OneAndHalfStop);
+    ui->Stop_cbox->addItem(QStringLiteral("1.5"), QSerialPort::OneAndHalfStop);
     ui->Stop_cbox->addItem(QStringLiteral("2"), QSerialPort::TwoStop);
     ui->Stop_cbox->setCurrentIndex(0);
 
@@ -158,7 +158,7 @@ void MainWindow::on_Transmit_btn_clicked()
 
     QString cmd = ui->TxData_inpTxt->text().trimmed();
     ui->TxData_inpTxt->clear();
-    ui->textBrowser->append("TX: " + cmd);
+    ui->textBrowser->append("Tx: " + cmd);
 
     sendString(cmd);
 
@@ -167,7 +167,7 @@ void MainWindow::on_Transmit_btn_clicked()
 
 bool MainWindow::sendString(const QString &s)
 {
-    unsigned int charDelay=1;
+    unsigned int charDelay = 1;
 
     QString hex = s;
     hex.remove(QRegExp("\\s"));
@@ -206,7 +206,6 @@ bool MainWindow::sendString(const QString &s)
 
 bool MainWindow::sendByte(char c, unsigned int delay)
 {
-
     int res=serial->write(&c, 1);
 
     if (res<1)
@@ -217,7 +216,6 @@ bool MainWindow::sendByte(char c, unsigned int delay)
     millisleep(delay);
     qDebug() << true;
     return true;
-
 }
 
 void MainWindow::habilitarInterfaz()
