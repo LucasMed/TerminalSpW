@@ -6,14 +6,21 @@
 #include <QDebug>
 #include <QList>
 
+#include <QThread>
+
+class Sleeper : public QThread
+{
+public:
+    static void usleep(unsigned long usecs){QThread::usleep(usecs);}
+    static void msleep(unsigned long msecs){QThread::msleep(msecs);}
+    static void sleep(unsigned long secs){QThread::sleep(secs);}
+};
+
 void millisleep(int ms)
 {
    if (ms>0)
    {
-      struct timeval tv;
-      tv.tv_sec=0;
-      tv.tv_usec=ms*1000;
-      select(0, 0, 0, 0, &tv);
+      Sleeper::msleep(ms);
    }
 }
 MainWindow::MainWindow(QWidget *parent) :
@@ -21,12 +28,12 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-<<<<<<< HEAD
+
     connect(ui->actionExit,SIGNAL(triggered()),this,SLOT(close()));
     foreach (const QSerialPortInfo &info, QSerialPortInfo::availablePorts()) {
         ui->Port_cbox->addItem(info.portName());
     }
-=======
+
     this->setWindowFlags(Qt::Window|Qt::MSWindowsFixedSizeDialogHint);//Para no poder maximizar la ventana y que el tamaño sea fijo
 
 
@@ -34,7 +41,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->actionExit,SIGNAL(triggered()),this,SLOT(close()));
     p = new Settings();
     inicializarCombos();
->>>>>>> b8c37e2c646ec0dbf5e48153953cebb4d75b775f
+
 
 }
 
@@ -56,9 +63,9 @@ void MainWindow::on_actionHelp_triggered()
                           "using Qt, with a menu bar, toolbars, and a status bar."));
 }
 
-<<<<<<< HEAD
 
-=======
+
+
 void MainWindow::inicializarCombos()
 {
 
@@ -209,4 +216,4 @@ bool MainWindow::sendByte(char c, unsigned int delay)
     return true;
 
 }
->>>>>>> b8c37e2c646ec0dbf5e48153953cebb4d75b775f
+

@@ -43,8 +43,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-<<<<<<< HEAD
-=======
+
     QSerialPort *serial;
     Settings *p;
     void inicializarCombos();
@@ -54,7 +53,7 @@ protected:
     bool sendByte(char c, unsigned int delay);
 
     int m_fd;
->>>>>>> b8c37e2c646ec0dbf5e48153953cebb4d75b775f
+
 };
 
 #endif // MAINWINDOW_H
