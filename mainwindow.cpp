@@ -5,7 +5,6 @@
 #include <QtSerialPort/QSerialPortInfo>
 #include <QDebug>
 #include <QList>
-
 #include <QThread>
 
 class Sleeper : public QThread
