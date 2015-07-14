@@ -73,13 +73,13 @@ void MainWindow::inicializarCombos()
         ui->Port_cbox->addItem(info.portName());
     }
 
-    ui->Baud_cbox->addItem(QStringLiteral("9600"), QSerialPort::Baud1200);
-    ui->Baud_cbox->addItem(QStringLiteral("19200"), QSerialPort::Baud2400);
-    ui->Baud_cbox->addItem(QStringLiteral("38400"), QSerialPort::Baud4800);
-    ui->Baud_cbox->addItem(QStringLiteral("115200"), QSerialPort::Baud9600);
-    ui->Baud_cbox->addItem(QStringLiteral("9600"), QSerialPort::Baud19200);
-    ui->Baud_cbox->addItem(QStringLiteral("19200"), QSerialPort::Baud38400);
-    ui->Baud_cbox->addItem(QStringLiteral("38400"), QSerialPort::Baud57600);
+    ui->Baud_cbox->addItem(QStringLiteral("1200"), QSerialPort::Baud1200);
+    ui->Baud_cbox->addItem(QStringLiteral("2400"), QSerialPort::Baud2400);
+    ui->Baud_cbox->addItem(QStringLiteral("4800"), QSerialPort::Baud4800);
+    ui->Baud_cbox->addItem(QStringLiteral("9600"), QSerialPort::Baud9600);
+    ui->Baud_cbox->addItem(QStringLiteral("19200"), QSerialPort::Baud19200);
+    ui->Baud_cbox->addItem(QStringLiteral("38400"), QSerialPort::Baud38400);
+    ui->Baud_cbox->addItem(QStringLiteral("57600"), QSerialPort::Baud57600);
     ui->Baud_cbox->addItem(QStringLiteral("115200"), QSerialPort::Baud115200);
     ui->Baud_cbox->setCurrentIndex(7);
 
